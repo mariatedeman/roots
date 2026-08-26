@@ -1,12 +1,11 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
-import { getReactNativePersistence, initializeAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 /* Kommentera in detta om du vill använda från datorn och kommentera ut auth på rad 23 */
-// import { getAuth } from "firebase/auth";
+// ----- BROWSER ONLY -----
+import { getAuth } from "firebase/auth";
+// ----- BROWSER ONLY -----
 // export const auth = getAuth(app);
 
 // const firebaseConfig = {
@@ -29,11 +28,16 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
-export const auth = initializeAuth(app, {
-  persistence: getReactNativePersistence(AsyncStorage),
-});
+// ----- EXPO ONLY -----
+// export const auth = initializeAuth(app, {
+//   persistence: getReactNativePersistence(AsyncStorage),
+// });
+// ----- EXPO ONLY -----
+
+// --- BROWSER ONLY ---
+export const auth = getAuth(app);
+// --- BROWSER ONLY ---
 
 export const db = getFirestore(app);
 export const storage = getStorage(app);
