@@ -1,10 +1,12 @@
 import { DefaultButton } from "@/components/ui/buttons/DefaultButton";
 import { FormLayout } from "@/components/ui/forms/FormLayoutComponent";
+import Popover from "@/components/ui/info/Popover";
 import { DefaultInput } from "@/components/ui/inputs/DefaultInput";
 import { Colors, Styles } from "@/constants/design-system";
 import { CredentialsStepProps } from "@/interfaces";
+import { Info } from "@tamagui/lucide-icons";
 import { Alert, Image, Linking } from "react-native";
-import { Text } from "tamagui";
+import { Button, Text, XStack } from "tamagui";
 import { signUp } from "../../auth";
 
 export default function CredentialsStep({
@@ -45,7 +47,7 @@ export default function CredentialsStep({
             text: "Öppna e-post",
             onPress: () => Linking.openURL("message:"),
           },
-        ]
+        ],
       );
     } catch (err: any) {
       if (err.code === "auth/email-already-in-use") {
@@ -91,6 +93,28 @@ export default function CredentialsStep({
         secureTextEntry={true}
         autoCapitalize="none"
       />
+
+      <XStack
+        alignItems="flex-start"
+        justifyContent="flex-start"
+        width="100%"
+        gap="$2"
+      >
+        <Popover
+          placement="right"
+          trigger={
+            <Button
+              variant="outlined"
+              borderColor="transparent"
+              size="$2"
+              circular
+              icon={<Info size={24} color={Colors.details} />}
+            />
+          }
+        >
+          <Text width={200}>Lösenordet måste vara minst 6 tecken långt.</Text>
+        </Popover>
+      </XStack>
 
       <Text style={{ ...Styles.actionL, textAlign: "center" }}>{error}</Text>
 
