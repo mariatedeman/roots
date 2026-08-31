@@ -8,23 +8,14 @@ import { getAuth } from "firebase/auth";
 // ----- BROWSER ONLY -----
 // export const auth = getAuth(app);
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyD6SCHQ-4fUscJS8-UWMJdngtqFQtsJ0zI",
-//   authDomain: "roots-cd39a.firebaseapp.com",
-//   projectId: "roots-cd39a",
-//   storageBucket: "roots-cd39a.firebasestorage.app",
-//   messagingSenderId: "872631865213",
-//   appId: "1:872631865213:web:f134fe9fb5cdf2fe4c0614",
-//   measurementId: "G-YNGG0LDKX4",
-// };
 const firebaseConfig = {
-  apiKey: "AIzaSyCJ61-oviOir-o-t8EBfX2kEeZbnTIA_HA",
-  authDomain: "roots-540a3.firebaseapp.com",
-  projectId: "roots-540a3",
-  storageBucket: "roots-540a3.firebasestorage.app",
-  messagingSenderId: "667934528346",
-  appId: "1:667934528346:web:dc2aa6949c74f9409d1963",
-  measurementId: "G-QYQH4H15C9",
+  apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
