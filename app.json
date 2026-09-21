@@ -4,7 +4,6 @@
     "slug": "roots",
     "version": "1.0.0",
     "orientation": "portrait",
-    // "icon": "./assets/icons/ios-light.png", //Icon on start screen in Expo
     "scheme": "roots",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -43,7 +42,10 @@
           }
         }
       ],
-      "expo-font"
+      "expo-font",
+      "expo-image",
+      "expo-status-bar",
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true,

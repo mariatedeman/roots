@@ -94,7 +94,7 @@ export const ProductCardBig = ({
               imageStyle={styles.image}
               onPress={onPress}
             />
-            {categoryName && (
+            {!!categoryName && (
               <View style={styles.categoryBadge}>
                 <Text style={styles.categoryText}>{categoryName}</Text>
               </View>
@@ -117,7 +117,7 @@ export const ProductCardBig = ({
               />
             </View>
 
-            {description && (
+            {!!description && (
               <Text style={[styles.description, Styles.bodyM]}>
                 {description}
               </Text>
@@ -133,7 +133,7 @@ export const ProductCardBig = ({
               resizeMode="cover"
               cachePolicy="memory-disk"
             />
-            {categoryName && (
+            {!!categoryName && (
               <View style={styles.categoryBadge}>
                 <Text style={styles.categoryText}>{categoryName}</Text>
               </View>
@@ -155,7 +155,7 @@ export const ProductCardBig = ({
             />
           </View>
 
-          {description && (
+          {!!description && (
             <Text style={[styles.description, Styles.bodyM]}>
               {description}
             </Text>

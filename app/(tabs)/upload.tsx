@@ -113,7 +113,9 @@ export default function UploadScreen() {
         />
       </View>
 
- {error && <Text style={[Styles.actionL, { textAlign: "center" }]}>{error}</Text>} 
+      {!!error && (
+        <Text style={[Styles.actionL, { textAlign: "center" }]}>{error}</Text>
+      )}
       <DefaultButton
         onPress={handleCreatePlant}
         disabled={loading}

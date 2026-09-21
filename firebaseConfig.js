@@ -18,6 +18,16 @@ const firebaseConfig = {
   measurementId: process.env.EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCJ61-oviOir-o-t8EBfX2kEeZbnTIA_HA",
+//   authDomain: "roots-540a3.firebaseapp.com",
+//   projectId: "roots-540a3",
+//   storageBucket: "roots-540a3.firebasestorage.app",
+//   messagingSenderId: "667934528346",
+//   appId: "1:667934528346:web:dc2aa6949c74f9409d1963",
+//   measurementId: "G-QYQH4H15C9",
+// };
+
 const app = initializeApp(firebaseConfig);
 
 // ----- EXPO ONLY -----
