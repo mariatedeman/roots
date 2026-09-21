@@ -114,15 +114,6 @@ export default function CredentialsStep({
         autoCapitalize="none"
       />
 
-      <XStack
-        alignItems="flex-start"
-        justifyContent="flex-start"
-        width="100%"
-        gap="$2"
-      >
-        
-      </XStack>
-
       <Text style={{ ...Styles.actionL, textAlign: "center" }}>{error}</Text>
 
       <DefaultButton onPress={handleSignUp} disabled={loading}>
