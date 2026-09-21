@@ -78,13 +78,33 @@ export default function CredentialsStep({
         autoCapitalize="none"
       />
 
+      <XStack position="relative" alignItems="center" width="100%">
       <DefaultInput
         value={password1}
         onChangeText={setPassword1}
         placeholder="Lösenord"
         secureTextEntry={true}
         autoCapitalize="none"
+        paddingRight={48}
       />
+
+      <Popover
+          placement="bottom-end"
+          trigger={
+            <Button
+              position="absolute"
+              right="$2"
+              variant="outlined"
+              borderColor="transparent"
+              size="$2"
+              circular
+              icon={<Info size={24} color={Colors.details} />}
+            />
+          }
+        >
+          <Text width={200}>Lösenordet måste vara minst 6 tecken långt.</Text>
+        </Popover>
+      </XStack>
 
       <DefaultInput
         value={password2}
@@ -100,20 +120,7 @@ export default function CredentialsStep({
         width="100%"
         gap="$2"
       >
-        <Popover
-          placement="right"
-          trigger={
-            <Button
-              variant="outlined"
-              borderColor="transparent"
-              size="$2"
-              circular
-              icon={<Info size={24} color={Colors.details} />}
-            />
-          }
-        >
-          <Text width={200}>Lösenordet måste vara minst 6 tecken långt.</Text>
-        </Popover>
+        
       </XStack>
 
       <Text style={{ ...Styles.actionL, textAlign: "center" }}>{error}</Text>
