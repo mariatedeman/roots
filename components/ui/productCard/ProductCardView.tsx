@@ -94,7 +94,7 @@ export const ProductCardView = ({
               onScroll={handleScroll}
               imageStyle={styles.image}
             />
-            {categoryName && (
+            {!!categoryName && (
               <View style={styles.categoryBadge}>
                 <Text style={styles.categoryText}>{categoryName}</Text>
               </View>
@@ -119,7 +119,7 @@ export const ProductCardView = ({
             />
           </View>
 
-          {description && (
+          {!!description && (
             <Text style={[styles.description, Styles.bodyM]}>
               {description}
             </Text>
@@ -135,7 +135,7 @@ export const ProductCardView = ({
                 resizeMode="cover"
                 cachePolicy="memory-disk"
               />
-              {categoryName && (
+              {!!categoryName && (
                 <View style={styles.categoryBadge}>
                   <Text style={styles.categoryText}>{categoryName}</Text>
                 </View>
@@ -161,7 +161,7 @@ export const ProductCardView = ({
             />
           </View>
 
-          {description && (
+          {!!description && (
             <Text style={[styles.description, Styles.bodyM]}>
               {description}
             </Text>
